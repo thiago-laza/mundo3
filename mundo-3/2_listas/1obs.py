@@ -89,7 +89,7 @@ for pessoa in galera:
 for pessoa in galera:
     print(f'{pessoa[0]} tem {pessoa[1]} anos de idade.')
 '''
-
+'''
 galera = list()
 dado = list()
 cont_mairo = 0
@@ -109,6 +109,10 @@ for pessoa in galera:
         print(f'{pessoa[0]} e menor de idade.')
         cont_menor+=1
 print(f'Temos {cont_mairo} pessoas maior de idade e {cont_menor} pessoas menor de idade.')
+'''
+
+print(2396437894%8)
+
 
 
 
