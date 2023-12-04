@@ -11,25 +11,44 @@ C) Uma listagem com as pessoas mais leves.
 obs: mais leve e o menor peso e mais pesada o maior peso
 """
 
-lista = []
-dados = []
-menor = 0
-maior = 0
-
+'''
+Minha tentaviva de solucao
+obs: nao fiz as listas dos mais pesados e dos mais leves.
+'''
+temp = []
+princ = []
+maior = menor = 0
 while True:
-    dados.append(input('Nome: '))
-    dados.append(float(input('Altura: ')))
-    lista.append(dados[:])
-    dados.clear()
-    resp = input('Deseja continuar? [S/N] ')
+    temp.append(input('Nome: '))
+    temp.append(float(input('Peso: ')))
+    if len(princ) == 0:
+        maior = menor = temp[1]
+    else:
+        if temp[1] > maior:
+            maior = temp[1]
+        if temp[1] < menor:
+            menor = temp[1]
+    princ.append(temp[:])#cria uma copia de temp sem ligacao
+    temp.clear()
+    resp = input('Quer continuar? [S/N] ')
     if resp in 'Nn':
         break
 
-print(lista)
-print(f'Foram cadastradas {len(lista)} pessoas.')
 
-
-    
+print('-='*30)
+print(f'{princ}')
+print('-='*30) 
+print(f'Ao todo, voce cadastrou {len(princ)} pessoas.')
+print('-='*30)
+print(f'O maior peso foi de {maior} kg.')
+for p in princ:
+    if p[1] == maior:
+        print(p[0])
+print('-='*30)
+print(f'O menor peso foi de {menor} kg.')
+for p in princ:
+    if p[1] == menor:
+        print(p[0]) 
 
 
 
