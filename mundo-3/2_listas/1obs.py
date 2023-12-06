@@ -110,8 +110,16 @@ for pessoa in galera:
         cont_menor+=1
 print(f'Temos {cont_mairo} pessoas maior de idade e {cont_menor} pessoas menor de idade.')
 '''
+pessoas = [['pedro',25],['maria',19],['joao',32]]
 
-print(2396437894%8)
+print(pessoas[0][0])
+print(pessoas[1][1])
+print(pessoas[2][0])
+print(pessoas[1])
+
+
+
+
 
 
 
