@@ -32,3 +32,32 @@ idade tem valor ...
 ctps tem valor 0
 
 '''
+inf = {}
+nome = input('Nome: ')
+inf['Nome'] = nome
+nascimento = int(input('Ano de nascimento: '))
+inf['Idade'] = 2023 - nascimento
+ctps = int(input('Carteira de trabalho (0 nao tem): '))
+inf['CTPS'] = ctps
+if ctps == 0:
+    print('=' * 20)
+    for j,k in inf.items():
+        print(f'{j} tem valor {k}')
+else:
+    contratacao = int(input('Ano de contratacao: '))
+    inf['Contratacao'] = contratacao
+    salario = float(input('Salario: R$ '))
+    inf['Salario'] = salario
+    inf['Aposentadoria'] = (2023-nascimento)+35
+    print('=' * 20)
+    for j,k in inf.items():
+        print(f'{j} tem valor {k}')
+
+
+
+
+
+
+
+
+

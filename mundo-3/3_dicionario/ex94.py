@@ -28,3 +28,17 @@ lista das pessoas que estao acima da media:
 nome: ... ; sexo:... ; idade = ...
 nome: ... ; sexo:... ; idade = ...
 '''
+pessoa = {}
+pessoas = []
+while True:
+    nome = input('Nome: ')
+    sexo = input('Sexo: ')
+    idade = int(input('Idade: '))
+    pessoa['nome'] = nome
+    pessoa['sexo'] = sexo
+    pessoa['idade'] = idade
+    pessoas.append(pessoa)
+    resp = input('Deseja continuar? [s/n]')
+    if resp in 'Nn':
+        break
+print(pessoas)

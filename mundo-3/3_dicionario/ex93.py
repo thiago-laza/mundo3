@@ -26,3 +26,33 @@ na partida 1, fez ... gols
 ...
 foi um total de ... gols.
 '''
+inf = {}
+lista_gols = []
+
+nome = input(('Nome do jogador: '))
+inf['nome'] = nome
+partidas = int(input(f'Quantas partidas {nome} jogou? '))
+
+acu = 0
+for p in range(partidas):
+    gols = int(input(f'Quantos gols na partida {p}? '))
+    acu+=gols
+    lista_gols.append(gols)
+inf['gols'] = lista_gols
+inf['total'] = acu
+
+print(('='*50))
+print((inf))
+
+print(('='*50))
+for j,k in inf.items():
+    print(f'O campo {j} tem valor {k}')
+
+print(f'O jogador {nome} jogou {partidas} partidas.')
+for j,k in enumerate(lista_gols):
+    print(f'Na partida {j}, fez {k} gols.')
+print(f'Foi um total de {acu} gols.')
+
+
+
+
