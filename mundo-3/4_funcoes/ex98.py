@@ -20,22 +20,30 @@ c) pede inicio, fim e passo
 obs: funcionar crescente e decrescente
 obs: se o passo for 0 fica 1
 '''
+from time import sleep
 def contador(inicio, fim, passo):
+    print(f'Contegem de {inicio} ate {fim} de {passo} em {passo}')
+    if passo < 0:
+        passo*= -1
+    if passo == 0:
+        passo = 1
     if inicio < fim:
         while inicio <= fim:
-            print(inicio, end=' ')
+            print(inicio ,end=' ')
+            sleep(0.5)
             inicio+=passo
+        print('Fim')
     else:
-        print()
         while fim < inicio:
             print(inicio, end=' ')
+            sleep(0.5)
             inicio-=passo
+        print('Fim')
 
-print('De 1 ate 10 de 1 em 1:',end=' ')
-contador(1,10,1)
-print('\nDe 10 ate 0 de 2 em 2:')
-contador(10,0,2)
-print()
+
+#contador(1,10,1)
+#contador(10,0,2)
+
 inicio = int(input('Inicio: '))
 fim = int(input('Fim: '))
 passo = int(input('Passo: '))

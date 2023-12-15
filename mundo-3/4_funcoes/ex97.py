@@ -15,10 +15,11 @@ thiago cavalcanti azevedo
 -------------------------
 '''
 def escreva(msg):
-    print('-'*len(msg))
-    print(msg)
-    print('-'*len(msg))
+    tam = len(msg)+4
+    print('-'*tam)
+    print(f'  {msg}')
+    print('-'*tam)
 
 
-escreva('thiago')
-escreva('thiago cavalcanti azevedo')
+msg = input('Escreva uma mensagem: ')
+escreva(msg)

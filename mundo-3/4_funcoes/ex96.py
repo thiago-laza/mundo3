@@ -13,6 +13,8 @@ def area(l,c):
     print(f'A area de um terreno {l}m x {c}m e de {a}m2')
 
 
-area(2,3)
+l = float(input('Informe a largura do tereno (m): '))
+c = float(input('Informe o comprimento do terreno (m): '))
+area(l,c)
 
 
