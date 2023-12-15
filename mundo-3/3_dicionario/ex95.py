@@ -36,3 +36,22 @@ mostrar os dados de qual jogador?
 
 obs: 999 para o programa.
 '''
+jogadores = []
+while True:
+    atleta = {}
+    lista_gols = []
+
+    atleta['nome'] = input('Nome do jogador: ')
+    partidas = int(input('Numero de partidas: '))
+    for p in range(partidas):
+        gols = int(input(f'Numero de gols na partida {p+1}: '))
+        lista_gols.append(gols)
+
+    resp = input('Deseja cadastrar outro jogador? [s/n] ')
+    if resp in 'Nn':
+        break
+
+print(lista_gols)
+
+
+

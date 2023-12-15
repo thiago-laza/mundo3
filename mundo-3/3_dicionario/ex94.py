@@ -28,17 +28,45 @@ lista das pessoas que estao acima da media:
 nome: ... ; sexo:... ; idade = ...
 nome: ... ; sexo:... ; idade = ...
 '''
-pessoa = {}
-pessoas = []
+
+cadastro = []
+total_pessoas = 0
+soma_idades = 0
+mulheres = []
+acima_media = []
+
 while True:
-    nome = input('Nome: ')
-    sexo = input('Sexo: ')
-    idade = int(input('Idade: '))
-    pessoa['nome'] = nome
-    pessoa['sexo'] = sexo
-    pessoa['idade'] = idade
-    pessoas.append(pessoa)
-    resp = input('Deseja continuar? [s/n]')
+    pessoa = {}
+
+    pessoa['nome'] = input('Nome: ')
+    pessoa['sexo'] =  input('Sexo [f/m]: ')
+    pessoa['idade'] = int(input('Idade: '))
+
+    cadastro.append(pessoa)
+    total_pessoas+=1
+    soma_idades+=pessoa['idade']
+
+    if pessoa['sexo'] == 'f':
+        mulheres.append(pessoa)
+
+    resp = input('Deseja continuar? [s/n] ')
     if resp in 'Nn':
         break
-print(pessoas)
+
+media_idade = soma_idades / total_pessoas
+
+for pessoa in cadastro:
+    if pessoa['idade'] > media_idade:
+        acima_media.append(pessoa)
+
+print(f'A) O grupo total tem {total_pessoas} pessoas.')
+print(f'B) A media de idade do grupo e de {media_idade} anos.')
+print('C) Lista de mulheres:')
+for mulher in mulheres:
+    print(f'{mulher["nome"]} {mulher["idade"]} anos.')
+print('As pessoas com idade acima da media sao:')
+for pessoa in acima_media:
+    print(f'{pessoa["nome"]} {pessoa["idade"]} anos.')
+
+
+
