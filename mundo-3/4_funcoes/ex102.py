@@ -11,7 +11,10 @@ print(n,show=True) -> n.(n-1) ... resultado
 obs:criar help da function
 '''
 
-def fatorial(num,verifica=False):
+'''
+MINHA SOLUCAO
+
+def fatorial(num, verifica=False):
     f = 1
     for c in range(num,0,-1):
         f*=c
@@ -31,5 +34,34 @@ num = int(input('numero: '))
 fatorial(num)
 verifica = input(f'Deseja ver o processo de calculo do fatorial de {num}? [s/n]: ')
 if verifica == 's':
-    fatorial(num,verifica=True)
+    fatorial(num, verifica=True)
+'''
+def fatorial(n, show=False):
+    '''
+    -> calcula o fatorial de um numero
+    :param n: o numero a ser calculado o fatorial
+    :param show: (opcional) Mostra ou nao a conta
+    :return: O valor do fatorial do numero n
+    '''
+    f = 1
+    for c in range(n, 0, -1):
+        if show:
+            print(c, end=' ')
+            if c > 1:
+                print(' x ',end=' ')
+            else:
+                print(' = ',end=' ')
+        f *= c
+    return f
 
+
+numero = int(input('Digite um numero para obter o seu fatorial: '))
+print(fatorial(numero))
+calculo = input('Deseja ver o calculo?[s/n] ')
+if calculo == 's':
+    print(fatorial(numero,True))
+
+
+
+
+#help(fatorial)
