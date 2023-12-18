@@ -17,6 +17,12 @@ saidacom
 obs: colocar help
 '''
 def notas(*n,sit=False):
+    '''
+    -> Funcao que recebe notas, identifica maior, menor e a media. Situacao e opicional.
+    :param n: numero de notas
+    :param sit: opcional a situacao do estudante.
+    :return: um dicionario.
+    '''
     cont = 0
     acu = 0
     resultado = {}
@@ -33,11 +39,19 @@ def notas(*n,sit=False):
             menor_nota = n[c]
             resultado['menor'] = menor_nota
         resultado['media'] = media
-        if sit = True and media < 5:
-            resultado['situacao'] = 'Ruim'
+        if sit:
+            if resultado['media'] < 5:
+                resultado['situacao'] = 'Ruim'
+            elif 5 <= resultado['media'] < 7:
+                resultado['situacao'] = 'Regular'
+            elif 7 <= resultado['media'] < 8:
+                resultado['situacao'] = 'Bom'
+            elif 8 <= resultado['media'] <= 10:
+                resultado['situacao'] = 'Excelente'
         dicionario = resultado
     return dicionario
 
 
-resp = notas(6, 5, 7, sit=True)
+resp = notas(8, 8, 10, sit=True)
 print(resp)
+help(notas)
