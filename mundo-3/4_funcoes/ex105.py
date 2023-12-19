@@ -16,13 +16,16 @@ saida:{'total': 4,'maior':10,'menor':5.5,'media':7.8}
 saidacom
 obs: colocar help
 '''
+'''
+MINHA SOLUCAO:
+
 def notas(*n,sit=False):
-    '''
-    -> Funcao que recebe notas, identifica maior, menor e a media. Situacao e opicional.
-    :param n: numero de notas
-    :param sit: opcional a situacao do estudante.
-    :return: um dicionario.
-    '''
+    #'''
+# -> Funcao que recebe notas, identifica maior, menor e a media. Situacao e opicional.
+#:param n: numero de notas
+#:param sit: opcional a situacao do estudante.
+#:return: um dicionario.
+'''
     cont = 0
     acu = 0
     resultado = {}
@@ -53,5 +56,33 @@ def notas(*n,sit=False):
 
 
 resp = notas(8, 8, 10, sit=True)
+print(resp)
+help(notas)
+'''
+
+
+def notas(*n, sit=False):
+    '''
+    -> funcao para analisar notas e situacoes de varios alunos
+    :param n: uma ou mais notas dos aluns (aceita varias)
+    :param sit: valor opcional, indicando se deve ou nao adicionar a situacao
+    :return: dicionario com varias informacoes sobre a situacao do aluno.
+    '''
+    r = dict()
+    r['total'] = len(n)
+    r['maior'] = max(n)
+    r['menor'] = min(n)
+    r['media'] = sum(n) / len(n)
+    if sit:
+        if r['media'] >= 7:
+            r['situacao'] = 'BOA'
+        elif r['media'] >= 5:
+            r['situacao'] = 'RAZOAVEL'
+        else:
+            r['situacao'] = 'RUIM'
+    return r
+
+
+resp = notas(5.5, 9.5, 9, 8.5, sit=True)
 print(resp)
 help(notas)
