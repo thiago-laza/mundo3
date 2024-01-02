@@ -15,4 +15,4 @@ def diminuir(p):
 
 
 def moeda(p):
-    return f'R${p:.2f}'
+    return f'R${p:>2.2f}'.replace('.',',')
